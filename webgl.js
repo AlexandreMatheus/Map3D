@@ -168,8 +168,8 @@ app.webGL = {
         app.webGL.circleInformationRef.forEach((e) => e.visible = false);
       },
 
-      showAllCircle: function (){
-        app.webGL.circleInformationRef.forEach((e) => setTimeout(function(){e.visible=true;},4500));
+      showAllCircle: function (time){
+        app.webGL.circleInformationRef.forEach((e) => e.visible=true);
       },
 
       createObject: function (
@@ -326,49 +326,49 @@ app.webGL = {
        CustomBounce.create("myBounce", {strength:0.2});
        TweenMax.to(m2.scale,1,{y:1.0,ease: Back.easeOut.config(1.0, 0.9),delay:1.3});
   
-       app.webGL.createObject("ground_city", "building_02_primary", {x: 15, y: 0, z: -25}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, true, 1);
+       app.webGL.createObject("ground_city", "building_02_primary", {x: 15, y: 0, z: -25}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, false, 1);
        setTimeout(function(){app.webGL.models["building_02_primary"].visible=true;},1600);
        var m2 = _this.models["building_02_primary_structure_01"];
        m2.scale.y=0.00001;
        CustomBounce.create("myBounce", {strength:0.3});
        TweenMax.to(m2.scale,1,{y:1.0,ease: Back.easeOut.config(1.0, 0.8),delay:1.6});
       
-       app.webGL.createObject("ground_city", "building_03_primary", {x: -3.3333, y: 0, z: -21.666}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, true, 1);
+       app.webGL.createObject("ground_city", "building_03_primary", {x: -3.3333, y: 0, z: -21.666}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, false, 1);
        setTimeout(function(){app.webGL.models["building_03_primary"].visible=true;},1700);
        var m2 = _this.models["building_03_primary_structure_01"];
        m2.scale.y=0.00001;
        CustomBounce.create("myBounce", {strength:0.3});
        TweenMax.to(m2.scale,1,{y:1.0,ease: Back.easeOut.config(.5, 0.9),delay:1.7});
   
-       app.webGL.createObject("ground_city", "building_04_primary", {x: 20, y: 0, z: -6.6666}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, true, 1);
+       app.webGL.createObject("ground_city", "building_04_primary", {x: 20, y: 0, z: -6.6666}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, false, 1);
        setTimeout(function(){app.webGL.models["building_04_primary"].visible=true;},1800);
        var m2 = _this.models["building_04_primary_structure_01"];
        m2.scale.y=0.00001;
        CustomBounce.create("myBounce", {strength:0.3});
        TweenMax.to(m2.scale,1,{y:1.0,ease: Back.easeOut.config(1.0, 0.8),delay:1.8});
 
-       app.webGL.createObject("ground_city", "building_01_alternate", {x: -8.3, y: 0, z: 25}, 0, {x: 1.0, y: 1.0, z: 1.0}, false, true, 1);
+       app.webGL.createObject("ground_city", "building_01_alternate", {x: -8.3, y: 0, z: 25}, 0, {x: 1.0, y: 1.0, z: 1.0}, false, false, 1);
        setTimeout(function(){app.webGL.models["building_01_alternate"].visible=true;},2000);
        var m2 = _this.models["building_01_alternate_structure_01"];
        m2.scale.y=0.00001;
        CustomBounce.create("myBounce", {strength:0.3});
        TweenMax.to(m2.scale,1,{y:1.0,ease: Back.easeOut.config(1.0, 0.9),delay:2.5});
   
-       app.webGL.createObject("ground_city", "building_02_alternate", {x: 1.666, y: 0, z: -8.333}, 0, {x: 1.0, y: 1.0, z: 1.0}, false, true, 1);
+       app.webGL.createObject("ground_city", "building_02_alternate", {x: 1.666, y: 0, z: -8.333}, 0, {x: 1.0, y: 1.0, z: 1.0}, false, false, 1);
        setTimeout(function(){app.webGL.models["building_02_alternate"].visible=true;},1800);
        var m2 = _this.models["building_02_alternate_structure_01"];
        m2.scale.y=0.00001;
        CustomBounce.create("myBounce", {strength:0.3});
        TweenMax.to(m2.scale,1,{y:1.0,ease: Back.easeOut.config(1.0, 0.8),delay:1.8});
   
-       app.webGL.createObject("ground_city", "building_03_alternate", {x: 1.666, y: 0, z: 6.66666}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, true, 1);
+       app.webGL.createObject("ground_city", "building_03_alternate", {x: 1.666, y: 0, z: 6.66666}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, false, 1);
        setTimeout(function(){app.webGL.models["building_03_alternate"].visible=true;},1900);
        var m2 = _this.models["building_03_alternate_structure_01"];
        m2.scale.y=0.00001;
        CustomBounce.create("myBounce", {strength:0.3});
        TweenMax.to(m2.scale,1,{y:1.0,ease: Back.easeOut.config(1.0, 0.9),delay:1.9});
 
-       app.webGL.createObject("ground_city", "building_04_alternate", {x: -26.666, y: 0, z: 0}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, true, 1);
+       app.webGL.createObject("ground_city", "building_04_alternate", {x: -26.666, y: 0, z: 0}, -90, {x: 1.0, y: 1.0, z: 1.0}, false, false, 1);
        setTimeout(function(){app.webGL.models["building_04_alternate"].visible=true;},2100);
        var m2 = _this.models["building_04_alternate_structure_01"];
        _this.models["building_04_alternate_structure_02"].visible=false;

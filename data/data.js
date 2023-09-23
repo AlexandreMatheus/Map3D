@@ -22,9 +22,9 @@ app.data = {
 			{
 				"name":"step2",
 				"style":"left customBackground narrow",
-				"title": "On-Premville",
-				"text":"It looks like youâ€™ve been managing all of your services and infrastructure in On-Premville but your city has a growing population and changing needs. Your existing services and infrastructure are represented in your city by these outdated buildings and roads.",
-				"buttonText":"Explore map",
+				"title": "Prédio",
+				"text":"so um exemplo de zoom por enquanto.",
+				"buttonText":"Voltar",
 				"nextState":"step1-2"
 			},
 		]
