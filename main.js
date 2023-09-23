@@ -28,6 +28,7 @@ app.init = function(){
 		if( page ) { app.go ( page );} else { app.go("step1");}
 	}
 
+	
 	app.webGL.init();
 	app.info.init();
 	app.HUD.init();
