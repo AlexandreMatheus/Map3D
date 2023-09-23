@@ -1,0 +1,283 @@
+"steps":[
+			{
+				"name":"step1",
+				"style":"",
+				"title": "Welcome to Hybrid<br />& Multi-Cloud City",
+				"text":"<b>An introduction to <img class='anthos' src='assets/images/anthos.png' /></b><br /><br />Hey Mayor! Your city has been growing and you need to modernize your buildings and infrastructure with Kubernetes to keep up with the demands of your citizens. Letâ€™s see how Anthos can help you manage this process.",
+				"buttonText":"Get started",
+				"nextState":"step2"
+			},
+			{
+				"name":"step2",
+				"style":"left noBackground narrow",
+				"title": "On-Premville",
+				"text":"It looks like youâ€™ve been managing all of your services and infrastructure in On-Premville but your city has a growing population and changing needs. Your existing services and infrastructure are represented in your city by these outdated buildings and roads.",
+				"buttonText":"Explore map",
+				"nextState":"step3"
+			},
+			{
+				"name":"step3",
+				"style":"top noBackground",
+				"title": "Cloud Districts",
+				"text":"You are expanding and modernizing your city into new districts in the cloud. The management of all of these districts is becoming increasingly complex and each of the districts represents work in silos. What a mess!",
+				"buttonText":"Try a new solution",
+				"nextState":"step4"
+			},
+			{
+				"name":"step4",
+				"style":"mediumWide",
+				"title": "Your Dashboard",
+				"text":"Your dashboard provides you with a single console to manage and monitor your city as you make changes and improvements.<br /><br />Itâ€™s time to get to work!",
+				"media":"iHUD",
+				"buttonText":"Next",
+				"nextState":"step5"
+			},
+			{
+				"name":"step5",
+				"style":"wide",
+				"title": "Track Communications in Transit",
+				"text":"Use Stackdriver logging at any time to view and track communication calls between different services located in On-Premville and in the Cloud Districts. Just expand this window to see the logs.",
+				"media":"iHUD",
+				"cta":"Click to close",
+				"buttonText":"",
+				"nextState":"step6"
+			},
+			{
+				"name":"step6",
+				"style":"mediumWide",
+				"title": "Track Communications in Transit",
+				"text":"Use Stackdriver logging at any time to view and track communication calls between different services located in On-Premville and in the Cloud Districts. Just expand this window to see the logs.",
+				"media":"iHUD",
+				"buttonText":"Next",
+				"nextState":"step7"
+			},
+			{
+				"name":"step7",
+				"style":"wide",
+				"title": "The Game Plan",
+				"text":"You need to expand your city to keep up with the needs of your citizens, and weâ€™ve got a 3-part plan to make it happen:",
+				"media":"buildings",
+				"buttonText":"Next",
+				"nextState":"step8"
+			},
+			{
+				"name":"step8",
+				"style":"left noBackground narrow",
+				"title": "Time for an On-Premville makeover",
+				"text":"Looks like On-Premville isn't running like we need.  Click on a few older buildings to modernize them manually. Think of this as containerizing your virtual machines using Kubernetes.",
+				"cta":"Modernize building",
+				"buttonText":"",
+				"nextState":"step9"
+			},
+
+			{
+				"name":"step9",
+				"style":"left noBackground narrow",
+				"title": "Time for an On-Premville makeover",
+				"text":"Looks like On-Premville isn't running like we need.  Click on a few older buildings to modernize them manually. Think of this as containerizing your virtual machines using Kubernetes.",
+				"cta":"Modernize building",
+				"buttonText":"",
+				"nextState":"step10"
+			},
+			{
+				"name":"step10",
+				"style":"left noBackground narrow",
+				"title": "Time for an On-Premville makeover",
+				"text":"Looks like On-Premville isn't running like we need.  Click on a few older buildings to modernize them manually. Think of this as containerizing your virtual machines using Kubernetes.",
+				"cta":"Modernize building",
+				"buttonText":"",
+				"nextState":"step11"
+			},
+			{
+				"name":"step11",
+				"style":"top noBackground",
+				"title": "Letâ€™s scale to the cloud",
+				"text":"Your population seems to be booming! Itâ€™s time to expand to Cloud Districts. First, drag and drop a modern building and replicate it on the Google Cloud District!",
+				"cta":"Drag and drop building",
+				"buttonText":"",
+				"nextState":"step12"
+			},
+			{
+				"name":"step12",
+				"style":"top noBackground",
+				"title": "Great!",
+				"text":"Now move a modern building to the other cloud district.",
+				"cta":"Drag and drop building",
+				"buttonText":"",
+				"nextState":"step13"
+			},
+			{
+				"name":"step13",
+				"style":"top noBackground",
+				"title": "Looking good",
+				"text":"Youâ€™ve begun your cityâ€™s migration process to the cloud. Itâ€™s time to connect these services.",
+				"cta":"",
+				"buttonText":"Next",
+				"nextState":"step14"
+			},
+			{
+				"name":"step14",
+				"style":"top noBackground",
+				"title": "Connect your services",
+				"text":"Click and draw a road to connect to your buildings across your multiple cloud districts and On-Premiville. This is a simplified version of manually configuring and connecting a few services across multiple clouds and on-premise locations.",
+				"cta":"Draw road",
+				"buttonText":"",
+				"nextState":"step15"
+			},
+			{
+				"name":"step15",
+				"style":"top noBackground",
+				"title": "Connect your services",
+				"text":"Click and draw a road to connect to your buildings across your multiple cloud districts and On-Premiville. This is a simplified version of manually configuring and connecting a few services across multiple clouds and on-premise locations.",
+				"cta":"Draw road",
+				"buttonText":"",
+				"nextState":"step15b"
+			},
+
+			{
+				"name":"step15b",
+				"style":"top noBackground",
+				"title": "Almost there",
+				"text":"You just moved one service and setup one set of connections between services. But what about the rest? Letâ€™s use Googleâ€™s migration tools to streamline this process.",
+				"cta":"",
+				"buttonText":"Next",
+				"nextState":"step16"
+			},
+			{
+				"name":"step16",
+				"style":"top noBackground",
+				"title": "Modernize and migrate with Velostrata and Anthos Migrate",
+				"text":"Use Velostrata to migrate VMs into Google Compute Engine, Anthos Migrate to modernize VMs into containers in GKE, or Anthos to modernize in place. Google Cloud accelerates and simplifies modernization and migration projects so you can automatically get everything up and running in minutes.",
+				"cta":"Click to mass migrate",
+				"buttonText":"",
+				"nextState":"step17"
+			},
+			{
+				"name":"step17",
+				"style":"top noBackground",
+				"title": "Modernize and migrate with Velostrata and Anthos Migrate",
+				"text":"Use Velostrata to migrate VMs into Google Compute Engine, Anthos Migrate to modernize VMs into containers in GKE, or Anthos to modernize in place. Google Cloud accelerates and simplifies modernization and migration projects so you can automatically get everything up and running in minutes.",
+				"cta":"",
+				"buttonText":"Next",
+				"nextState":"step18"
+			},
+			{
+				"name":"step18",
+				"style":"top noBackground",
+				"title": "Time for a district upgrade",
+				"text":"Keeping On-Premville and the Cloud Districts running the same version of Kubernetes can be simpler than you might think.  With Anthos in place you can enforce policy that makes your infrastructure consistent across your entire city.",
+				"media":"slider",
+				"cta":"Slide to upgrade district by district",
+				"buttonText":"",
+				"nextState":"step19"
+			},
+			{
+				"name":"step19",
+				"style":"top noBackground",
+				"title": "Time for a district upgrade",
+				"text":"Keeping On-Premville and the Cloud Districts running the same version of Kubernetes can be simpler than you might think.  With Anthos in place you can enforce policy that makes your infrastructure consistent across your entire city.",
+
+				"buttonText":"Next",
+				"nextState":"step20"
+			},
+			{
+				"name":"step20",
+				"style":"right noBackground narrow",
+				"title": "Activate Istio",
+				"text":"Activate Istio to create a service mesh that handles connecting your services to one another. There is no longer a need to manually point services at each other with IP addresses.",
+				"cta":"Activate",
+				"buttonText":"",
+				"nextState":"step21"
+			},
+			{
+				"name":"step21",
+				"style":"right noBackground mediumWide",
+				"title": "Activate Istio",
+				"text":"Activate Istio to create a service mesh that handles connecting your services to one another. There is no longer a need to manually point services at each other with IP addresses.",
+				"cta":"",
+				"buttonText":"Next",
+				"nextState":"step22"
+			},
+
+			{
+				"name":"step22",
+				"style":"right noBackground mediumWide",
+				"title": "Roll out a policy upgrade",
+				"text":"Hereâ€™s where youâ€™ll want to place your upgraded service.  But first, youâ€™ll need to need to safely test your policy upgrade prior to replacing older services.",
+
+				"buttonText":"Next",
+				"nextState":"step23"
+			},
+			{
+				"name":"step23",
+				"style":"right noBackground narrow",
+				"title": "Route Traffic",
+				"text":"Istio routes traffic and can also restrict traffic while an existing service is being upgraded.",
+				"cta":"Drag barricade to restrict traffic",
+				"buttonText":"",
+				"nextState":"step24"
+			},
+			{
+				"name":"step23b",
+				"style":"right noBackground narrow",
+				"title": "Route Traffic",
+				"text":"Istio routes traffic and can also restrict traffic while an existing service is being upgraded.",
+				"cta":"",
+				"buttonText":"Next",
+				"nextState":"step24"
+			},
+			{
+				"name":"step24",
+				"style":"right noBackground narrow",
+				"title": "Upgrade & Test",
+				"text":"Create a new version of the green building, and confirm that it works.",
+				"cta":"Click to build version 2.0",
+				"buttonText":"",
+				"nextState":"step25"
+			},
+			{
+				"name":"step25",
+				"style":"right noBackground narrow",
+				"title": "Upgrade & Test",
+				"text":"Create a new version of the green building, and confirm that it works.",
+				"cta":"",
+				"buttonText":"Next",
+				"nextState":"step26"
+			},
+			{
+				"name":"step26",
+				"style":"right noBackground narrow",
+				"title": "Time to upgrade",
+				"text":"Looks like your new service may perform better. Why donâ€™t we remove the barricade and upgrade your entire city?",
+				"cta":"Remove barricade",
+				"buttonText":"",
+				"nextState":"step27"
+			},
+			{
+				"name":"step27",
+				"style":"right noBackground narrow",
+				"title": "Time to upgrade",
+				"text":"Looks like your new service may perform better. Why donâ€™t we remove the barricade and upgrade your entire city?",
+				"cta":"Upgrade to 2.0",
+				"buttonText":"",
+				"nextState":"step28"
+			},
+			{
+				"name":"step28",
+				"style":"right noBackground narrow",
+				"title": "Time to upgrade",
+				"text":"Looks like your new service may perform better. Why donâ€™t we remove the barricade and upgrade your entire city?",
+				"cta":"",
+				"buttonText":"Finish",
+				"nextState":"step29"
+			},
+			{
+				"name":"step29",
+				"style":"top noBackground",
+				"title": "Great job Mayor!",
+				"text":"Your city is flourishing because you were able to bridge On-Premville to the Cloud Districts and have the best of both environments. Maybe everyone else should take some cues from you!",
+				"cta":"Learn more",
+				"buttonText":"Learn more"
+			}
+
+		],

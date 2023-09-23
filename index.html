@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My first three.js app</title>
+    <style>
+        body { margin: 0; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/howler.min.js"></script>
+    <script src="libs/TweenMax.min.js"></script>
+    <script src="libs/CustomWiggle.min.js"></script>
+    <script src="libs/CustomEase.min.js"></script>
+    <script src="libs/CustomBounce.min.js"></script>
+    <script src="libs/three.min.js"></script>
+    
+    <script src="libs/inflate.min.js"></script>
+    <script src="libs/FBXLoader.js"></script>
+
+    <script src="/main.js"></script>
+    <script src="data/data.js"></script>
+    <script src="/views.js"></script>
+    <script src="/webgl.js"></script>
+    <script src="libs/utils.js"></script>
+</head>
+<body>
+    <!-- elements -->
+    <div class="background"></div>
+    <canvas id="webgl" width="752" height="983" style="width: 752px; height: 983px;" class="show"></canvas>
+    <img class="logo logoBlack" src="https://static.wixstatic.com/media/62dd1c_26a4938b423f4c998596a3d640e177f6~mv2.png/v1/crop/x_319,y_160,w_1691,h_1274/fill/w_435,h_325,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/62dd1c_26a4938b423f4c998596a3d640e177f6~mv2.png">
+    <div class="startOver"><img class="startOverButton" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/next-button.png">Start Over</div>
+    <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/sound.png" class="sound soundOn">
+    <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/sound-off.png" class="sound soundOff">
+
+    <!-- info  -->
+    <div class="info">
+        <div class="title">Welcome to Hybrid<br>&amp; Multi-Cloud City</div>
+        <div class="text"><b>An introduction to <img class="labsit" src="https://27162734.fs1.hubspotusercontent-eu1.net/hubfs/27162734/__hs-marketplace__/labsit_logo_positivo_RGB-1.png"></b><br><br>Hey Mayor! Your city has been growing and you need to modernize your buildings and infrastructure with Kubernetes to keep up with the demands of your citizens. Let’s see how Anthos can help you manage this process.</div>
+        <div class="media">
+            <div class="iHUD mediaElement">
+                <div class="HUDMain">
+                    <div class="HUDTitle">Monitoring Station</div>
+                    <div class="indicator happiness yellow">
+                        <div class="happinessIcon icon">
+                            <img class="iconImage" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/happiness-icon.png">
+                        </div>
+                        <div class="happinessMeter meter">
+                            <div class="meterText">Happiness (IT satisfaction)</div>
+                            <div class="indicatorBarBacker barBacker"></div>
+                            <div class="indicatorBarColor bar"></div>
+                        </div>
+                    </div> 
+                    <div class="indicator security red">
+                        <div class="secutiryIcon icon">
+                            <img class="iconImage" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/security-icon.png">
+                        </div>
+                        <div class="securityMeter meter">
+                            <div class="meterText">Safety (Application security)</div>
+                            <div class="indicatorBarBacker barBacker"></div>
+                            <div class="indicatorBarColor bar"></div>
+                        </div>
+                    </div>
+                    <div class="indicator population yellow">
+                        <div class="populationIcon icon">
+                            <img class="iconImage" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/population-icon.png">
+                        </div>
+                        <div class="populationMeter meter">
+                            <div class="meterText">Population (Workload)</div>
+                            <div class="indicatorBarBacker barBacker"></div>
+                            <div class="indicatorBarColor bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="console">
+                    <div class="consoleTitle"><img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/Stackdriver Monitoring.svg"> Stackdriver</div>
+                    <div class="consoleText">
+                        <ul class="consoleList"><li class="blue">9/17/2023, 12:52:17 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:52:15 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:52:13 AM<br>Scanning: 46818</li><li class="grey">9/17/2023, 12:52:11 AM<br>Packets Received: 94598</li><li class="blue">9/17/2023, 12:52:09 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:52:07 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:52:05 AM<br>Scanning: 230</li><li class="grey">9/17/2023, 12:52:03 AM<br>Packets Received: 26263</li><li class="blue">9/17/2023, 12:52:01 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:59 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:58 AM<br>Scanning: 81667</li><li class="grey">9/17/2023, 12:51:56 AM<br>Packets Received: 51761</li><li class="blue">9/17/2023, 12:51:53 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:51 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:49 AM<br>Scanning: 31856</li><li class="grey">9/17/2023, 12:51:47 AM<br>Packets Received: 59649</li><li class="blue">9/17/2023, 12:51:45 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:43 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:41 AM<br>Scanning: 99601</li><li class="grey">9/17/2023, 12:51:39 AM<br>Packets Received: 87930</li><li class="blue">9/17/2023, 12:51:37 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:35 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:34 AM<br>Scanning: 98026</li><li class="grey">9/17/2023, 12:51:32 AM<br>Packets Received: 84788</li><li class="blue">9/17/2023, 12:51:30 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:28 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:25 AM<br>Scanning: 89170</li><li class="grey">9/17/2023, 12:51:23 AM<br>Packets Received: 24097</li><li class="blue">9/17/2023, 12:51:21 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:19 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:17 AM<br>Scanning: 65059</li><li class="grey">9/17/2023, 12:51:15 AM<br>Packets Received: 41683</li><li class="blue">9/17/2023, 12:51:13 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:11 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:09 AM<br>Scanning: 9838</li><li class="grey">9/17/2023, 12:51:07 AM<br>Packets Received: 67177</li><li class="blue">9/17/2023, 12:51:05 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:03 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:01 AM<br>Scanning: 64684</li><li class="grey">9/17/2023, 12:50:59 AM<br>Packets Received: 44029</li><li class="blue">9/17/2023, 12:50:57 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:55 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:53 AM<br>Scanning: 16247</li><li class="grey">9/17/2023, 12:50:51 AM<br>Packets Received: 34241</li><li class="blue">9/17/2023, 12:50:49 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:47 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:45 AM<br>Scanning: 92926</li><li class="grey">9/17/2023, 12:50:43 AM<br>Packets Received: 67987</li><li class="blue">9/17/2023, 12:50:41 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:39 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:38 AM<br>Scanning: 89816</li><li class="grey">9/17/2023, 12:50:35 AM<br>Packets Received: 66738</li><li class="blue">9/17/2023, 12:50:33 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:31 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:29 AM<br>Scanning: 91791</li><li class="grey">9/17/2023, 12:50:27 AM<br>Packets Received: 19290</li><li class="blue">9/17/2023, 12:50:25 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:23 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:21 AM<br>Scanning: 87073</li><li class="grey">9/17/2023, 12:50:19 AM<br>Packets Received: 97538</li><li class="blue">9/17/2023, 12:50:17 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:15 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:13 AM<br>Scanning: 18081</li><li class="grey">9/17/2023, 12:50:12 AM<br>Packets Received: 95519</li><li class="blue">9/17/2023, 12:50:09 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:07 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:05 AM<br>Scanning: 17244</li><li class="grey">9/17/2023, 12:50:03 AM<br>Packets Received: 72451</li><li class="blue">9/17/2023, 12:50:01 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:59 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:57 AM<br>Scanning: 93868</li><li class="grey">9/17/2023, 12:49:55 AM<br>Packets Received: 70021</li><li class="blue">9/17/2023, 12:49:53 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:51 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:49 AM<br>Scanning: 20337</li><li class="grey">9/17/2023, 12:49:47 AM<br>Packets Received: 84126</li><li class="blue">9/17/2023, 12:49:45 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:43 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:41 AM<br>Scanning: 24458</li><li class="grey">9/17/2023, 12:49:39 AM<br>Packets Received: 5569</li><li class="blue">9/17/2023, 12:49:37 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:35 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:33 AM<br>Scanning: 60109</li><li class="grey">9/17/2023, 12:49:31 AM<br>Packets Received: 355</li><li class="blue">9/17/2023, 12:49:29 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:27 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:25 AM<br>Scanning: 30700</li><li class="grey">9/17/2023, 12:49:23 AM<br>Packets Received: 97691</li><li class="blue">9/17/2023, 12:49:21 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:19 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:17 AM<br>Scanning: 55700</li><li class="grey">9/17/2023, 12:49:15 AM<br>Packets Received: 1538</li><li class="blue">9/17/2023, 12:49:13 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:11 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:09 AM<br>Scanning: 91362</li><li class="grey">9/17/2023, 12:49:08 AM<br>Packets Received: 5368</li><li class="blue">9/17/2023, 12:49:06 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:04 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:01 AM<br>Scanning: 2515</li><li class="grey">9/17/2023, 12:48:59 AM<br>Packets Received: 31895</li><li class="blue">9/17/2023, 12:48:57 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:55 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:53 AM<br>Scanning: 34451</li><li class="grey">9/17/2023, 12:48:51 AM<br>Packets Received: 5278</li><li class="blue">9/17/2023, 12:48:49 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:47 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:45 AM<br>Scanning: 99557</li><li class="grey">9/17/2023, 12:48:43 AM<br>Packets Received: 22585</li><li class="blue">9/17/2023, 12:48:41 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:39 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:37 AM<br>Scanning: 63101</li><li class="grey">9/17/2023, 12:48:35 AM<br>Packets Received: 92421</li><li class="blue">9/17/2023, 12:48:33 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:31 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:29 AM<br>Scanning: 6037</li><li class="grey">9/17/2023, 12:48:27 AM<br>Packets Received: 42358</li><li class="blue">9/17/2023, 12:48:25 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:23 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:21 AM<br>Scanning: 18901</li><li class="grey">9/17/2023, 12:48:19 AM<br>Packets Received: 31943</li><li class="blue">9/17/2023, 12:48:17 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:15 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:13 AM<br>Scanning: 62862</li><li class="grey">9/17/2023, 12:48:11 AM<br>Packets Received: 35879</li><li class="blue">9/17/2023, 12:48:09 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:07 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:05 AM<br>Scanning: 14225</li><li class="grey">9/17/2023, 12:48:03 AM<br>Packets Received: 54549</li><li class="blue">9/17/2023, 12:48:01 AM<br>Transmission Started:</li>
+                            <li class="blue">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                            <li class="red">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                            <li class="white">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                            <li class="green">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                            <li class="blue">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                            <li class="red">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                            <li class="white">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                            <li class="green">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slideButton">
+                    <img class="slideButtonArrow" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/HUD-arrow.png">
+                </div>
+            </div>
+            <div class="mediaElement slider">
+                
+                <div class="sliderBar">
+                    <img class="indicator pos1" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/slider-indicator.png">
+                    <div class="sliderBarBacker"></div>
+                    <div class="sliderBarColor pos1"></div>
+                    <div class="sliderBarMarker sliderBarMarker1"><div class="sliderMark active"></div></div>
+                    <div class="sliderBarMarker sliderBarMarker2"><div class="sliderMark "></div></div>
+                    <div class="sliderBarMarker sliderBarMarker3"><div class="sliderMark "></div></div>
+                    <div class="sliderBarMarker sliderBarMarker4"><div class="sliderMark "></div></div>
+                </div>
+                <div class="sliderText"></div>	
+            </div>
+            <div class="buildings mediaElement">
+                <div class="buildingElement building1">
+                    <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/building1.png">
+                    <div class="buildingNumber">1</div>
+                    <div class="buildingTitle">Modernize Services</div>
+                    <div class="buildingText">Upgrade your buildings and easily replicate them to the Cloud Districts.</div>
+                </div>
+                <div class="buildingElement building2">
+                    <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/building2.png">
+                    <div class="buildingNumber">2</div>
+                    <div class="buildingTitle">Standardize Management</div>
+                    <div class="buildingText">Standardize configuration management to roll out upgrades to your city.</div>
+                </div>
+                <div class="buildingElement building3">
+                    <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/building3.png">
+                    <div class="buildingNumber">3</div>
+                    <div class="buildingTitle">Route Traffic</div>
+                    <div class="buildingText">Use a service mesh to route traffic around upgrades without causing gridlock.</div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="button"></div>-->
+        <img class="button" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/next-button.png" style="opacity: 1; display: block;">
+        <div class="buttonText">Get started</div>
+        <div class="learnMoreButton">Learn More</div>
+        <img class="labsitEnd" src="https://27162734.fs1.hubspotusercontent-eu1.net/hubfs/27162734/__hs-marketplace__/labsit_logo_positivo_RGB-1.png">
+        <div class="share">
+
+            Share it  
+            <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/fb_icon.png" class="share-fb">
+            <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/twitter_icon.png" class="share-twitter">
+
+        </div>
+    </div>
+    <!-- end info -->
+
+    <!-- toolTip -->
+    <div class="tooltip">
+        <div class="text">Tool Tip Text</div>
+        <div class="line"><div class="circleOut"><div class="circleIn"></div></div></div>
+
+    </div>
+    <!-- end toolTip -->
+
+    <div class="switch">
+    </div>
+
+    <!-- HUD -->
+    <div class="HUD">
+        <div class="HUDMain">
+            <div class="HUDTitle">Monitoring Station</div>
+            <div class="istioOn">Istio OFF</div>
+            <div class="indicator happiness red">
+                <div class="happinessIcon icon">
+                    <img class="iconImage" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/happiness-icon.png">
+                </div>
+                <div class="happinessMeter meter">
+                    <div class="meterText">Happiness (IT satisfaction)</div>
+                    <div class="indicatorBarBacker barBacker"></div>
+                    <div class="indicatorBarColor bar"></div>
+                </div>
+            </div> 
+            <div class="indicator security red">
+                <div class="secutiryIcon icon">
+                    <img class="iconImage" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/security-icon.png">
+                </div>
+                <div class="securityMeter meter">
+                    <div class="meterText">Safety (Application security)</div>
+                    <div class="indicatorBarBacker barBacker"></div>
+                    <div class="indicatorBarColor bar"></div>
+                </div>
+            </div>
+            <div class="indicator population red">
+                <div class="populationIcon icon">
+                    <img class="iconImage" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/population-icon.png">
+                </div>
+                <div class="populationMeter meter">
+                    <div class="meterText">Population (Workload)</div>
+                    <div class="indicatorBarBacker barBacker"></div>
+                    <div class="indicatorBarColor bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="console">
+            <div class="consoleTitle"><img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/Stackdriver Monitoring.svg"> Stackdriver</div>
+            <div class="consoleText">
+                <ul class="consoleList"><li class="blue">9/17/2023, 12:52:17 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:52:15 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:52:13 AM<br>Scanning: 46818</li><li class="grey">9/17/2023, 12:52:11 AM<br>Packets Received: 94598</li><li class="blue">9/17/2023, 12:52:09 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:52:07 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:52:05 AM<br>Scanning: 230</li><li class="grey">9/17/2023, 12:52:03 AM<br>Packets Received: 26263</li><li class="blue">9/17/2023, 12:52:01 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:59 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:58 AM<br>Scanning: 81667</li><li class="grey">9/17/2023, 12:51:56 AM<br>Packets Received: 51761</li><li class="blue">9/17/2023, 12:51:53 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:51 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:49 AM<br>Scanning: 31856</li><li class="grey">9/17/2023, 12:51:47 AM<br>Packets Received: 59649</li><li class="blue">9/17/2023, 12:51:45 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:43 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:41 AM<br>Scanning: 99601</li><li class="grey">9/17/2023, 12:51:39 AM<br>Packets Received: 87930</li><li class="blue">9/17/2023, 12:51:37 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:35 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:34 AM<br>Scanning: 98026</li><li class="grey">9/17/2023, 12:51:32 AM<br>Packets Received: 84788</li><li class="blue">9/17/2023, 12:51:30 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:28 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:25 AM<br>Scanning: 89170</li><li class="grey">9/17/2023, 12:51:23 AM<br>Packets Received: 24097</li><li class="blue">9/17/2023, 12:51:21 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:19 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:17 AM<br>Scanning: 65059</li><li class="grey">9/17/2023, 12:51:15 AM<br>Packets Received: 41683</li><li class="blue">9/17/2023, 12:51:13 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:11 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:09 AM<br>Scanning: 9838</li><li class="grey">9/17/2023, 12:51:07 AM<br>Packets Received: 67177</li><li class="blue">9/17/2023, 12:51:05 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:51:03 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:51:01 AM<br>Scanning: 64684</li><li class="grey">9/17/2023, 12:50:59 AM<br>Packets Received: 44029</li><li class="blue">9/17/2023, 12:50:57 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:55 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:53 AM<br>Scanning: 16247</li><li class="grey">9/17/2023, 12:50:51 AM<br>Packets Received: 34241</li><li class="blue">9/17/2023, 12:50:49 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:47 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:45 AM<br>Scanning: 92926</li><li class="grey">9/17/2023, 12:50:43 AM<br>Packets Received: 67987</li><li class="blue">9/17/2023, 12:50:41 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:39 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:38 AM<br>Scanning: 89816</li><li class="grey">9/17/2023, 12:50:35 AM<br>Packets Received: 66738</li><li class="blue">9/17/2023, 12:50:33 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:31 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:29 AM<br>Scanning: 91791</li><li class="grey">9/17/2023, 12:50:27 AM<br>Packets Received: 19290</li><li class="blue">9/17/2023, 12:50:25 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:23 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:21 AM<br>Scanning: 87073</li><li class="grey">9/17/2023, 12:50:19 AM<br>Packets Received: 97538</li><li class="blue">9/17/2023, 12:50:17 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:15 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:13 AM<br>Scanning: 18081</li><li class="grey">9/17/2023, 12:50:12 AM<br>Packets Received: 95519</li><li class="blue">9/17/2023, 12:50:09 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:50:07 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:50:05 AM<br>Scanning: 17244</li><li class="grey">9/17/2023, 12:50:03 AM<br>Packets Received: 72451</li><li class="blue">9/17/2023, 12:50:01 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:59 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:57 AM<br>Scanning: 93868</li><li class="grey">9/17/2023, 12:49:55 AM<br>Packets Received: 70021</li><li class="blue">9/17/2023, 12:49:53 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:51 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:49 AM<br>Scanning: 20337</li><li class="grey">9/17/2023, 12:49:47 AM<br>Packets Received: 84126</li><li class="blue">9/17/2023, 12:49:45 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:43 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:41 AM<br>Scanning: 24458</li><li class="grey">9/17/2023, 12:49:39 AM<br>Packets Received: 5569</li><li class="blue">9/17/2023, 12:49:37 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:35 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:33 AM<br>Scanning: 60109</li><li class="grey">9/17/2023, 12:49:31 AM<br>Packets Received: 355</li><li class="blue">9/17/2023, 12:49:29 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:27 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:25 AM<br>Scanning: 30700</li><li class="grey">9/17/2023, 12:49:23 AM<br>Packets Received: 97691</li><li class="blue">9/17/2023, 12:49:21 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:19 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:17 AM<br>Scanning: 55700</li><li class="grey">9/17/2023, 12:49:15 AM<br>Packets Received: 1538</li><li class="blue">9/17/2023, 12:49:13 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:11 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:09 AM<br>Scanning: 91362</li><li class="grey">9/17/2023, 12:49:08 AM<br>Packets Received: 5368</li><li class="blue">9/17/2023, 12:49:06 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:49:04 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:49:01 AM<br>Scanning: 2515</li><li class="grey">9/17/2023, 12:48:59 AM<br>Packets Received: 31895</li><li class="blue">9/17/2023, 12:48:57 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:55 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:53 AM<br>Scanning: 34451</li><li class="grey">9/17/2023, 12:48:51 AM<br>Packets Received: 5278</li><li class="blue">9/17/2023, 12:48:49 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:47 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:45 AM<br>Scanning: 99557</li><li class="grey">9/17/2023, 12:48:43 AM<br>Packets Received: 22585</li><li class="blue">9/17/2023, 12:48:41 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:39 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:37 AM<br>Scanning: 63101</li><li class="grey">9/17/2023, 12:48:35 AM<br>Packets Received: 92421</li><li class="blue">9/17/2023, 12:48:33 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:31 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:29 AM<br>Scanning: 6037</li><li class="grey">9/17/2023, 12:48:27 AM<br>Packets Received: 42358</li><li class="blue">9/17/2023, 12:48:25 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:23 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:21 AM<br>Scanning: 18901</li><li class="grey">9/17/2023, 12:48:19 AM<br>Packets Received: 31943</li><li class="blue">9/17/2023, 12:48:17 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:15 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:13 AM<br>Scanning: 62862</li><li class="grey">9/17/2023, 12:48:11 AM<br>Packets Received: 35879</li><li class="blue">9/17/2023, 12:48:09 AM<br>Transmission Started:</li><li class="green">9/17/2023, 12:48:07 AM<br>Transmission Success</li><li class="red">9/17/2023, 12:48:05 AM<br>Scanning: 14225</li><li class="grey">9/17/2023, 12:48:03 AM<br>Packets Received: 54549</li><li class="blue">9/17/2023, 12:48:01 AM<br>Transmission Started:</li>
+                    <li class="blue">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                    <li class="red">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                    <li class="white">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                    <li class="green">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                    <li class="blue">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                    <li class="red">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                    <li class="white">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                    <li class="green">2019-04-12 4:35:00<br>Transmission 0010: Success</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slideButton">
+            <img class="slideButtonArrow" src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/HUD-arrow.png">
+        </div>
+        <div class="stages">
+            <div class="stageTitle">Stage</div>
+            <div class="stagesBarContainer">
+                <div class="stagesBarGrey"></div>
+                <div class="stagesBar"></div>
+                <div class="stagesNumberGrey stagesNumber1"><div class="stageNumber active">1</div></div>
+                <div class="stagesNumberGrey stagesNumber2"><div class="stageNumber">2</div></div>
+                <div class="stagesNumberGrey stagesNumber3"><div class="stageNumber">3</div></div>
+                <div class="stageText stageText1">Modernize<br>&amp; Scale</div>
+                <div class="stageText stageText2">Manage Services</div>
+                <div class="stageText stageText3">Manage Infrastructure</div>
+            </div>
+        </div>
+    </div>
+    <!-- end HUD -->
+
+    <!-- progress bar -->
+    <div class="progressBar" style="width: 80%;"></div>
+    <!-- end progress bar -->
+
+    <div id="upgrade"><span class="text"></span></div>
+    <div id="rotate">
+        <img src="https://showcase.withgoogle.com/demo/cloud-city/assets/images/city_mobile.png">
+    </div>
+    <script>app.init();</script>
+
+</body>
+</html>
